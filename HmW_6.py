@@ -256,6 +256,11 @@ def process_unknown(file_path, destination_folder):
     normalized_name = normalize(os.path.basename(file_path))
     new_path = os.path.join(destination_folder, normalized_name + file_extension)
     shutil.move(file_path, new_path)
+def print_folder_contents(folder_name, folder_path):
+    if os.path.exists(folder_path):
+        print(f"{folder_name}:", os.listdir(folder_path))
+    else:
+        print(f"{folder_name} does not exist.")
 
 def process_folder(folder_path):
     for root, dirs, files in os.walk(folder_path):
@@ -309,12 +314,12 @@ if __name__ == "__main__":
 
     print("Sorting is complete.")
     print("List of files in each category:")
-    # print_folder_contents("Images", os.path.join(absolute_path, IMAGES_FOLDER))
-    # print_folder_contents("Videos", os.path.join(absolute_path, VIDEO_FOLDER))
-    # print_folder_contents("Documents", os.path.join(absolute_path, DOCUMENTS_FOLDER))
-    # print_folder_contents("Music", os.path.join(absolute_path, AUDIO_FOLDER))
-    # print_folder_contents("Archives", os.path.join(absolute_path, ARCHIVES_FOLDER))
-    # print_folder_contents("Unknown extensions", os.path.join(absolute_path, OTHER_FOLDER))
+    print_folder_contents("Images", os.path.join(absolute_path, IMAGES_FOLDER))
+    print_folder_contents("Videos", os.path.join(absolute_path, VIDEO_FOLDER))
+    print_folder_contents("Documents", os.path.join(absolute_path, DOCUMENTS_FOLDER))
+    print_folder_contents("Music", os.path.join(absolute_path, AUDIO_FOLDER))
+    print_folder_contents("Archives", os.path.join(absolute_path, ARCHIVES_FOLDER))
+    print_folder_contents("Unknown extensions", os.path.join(absolute_path, OTHER_FOLDER))
 
     
 
