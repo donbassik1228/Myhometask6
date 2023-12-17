@@ -305,7 +305,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Получение абсолютного пути к папке Myhomework6
-    absolute_path = os.path.abspath("E:/Myhomework6")
+    absolute_path = os.path.abspath(os.getcwd())
 
     print("The full path to the folder Myhomework6:", absolute_path)
 
