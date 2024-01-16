@@ -130,8 +130,8 @@ def process_folder(folder_path):
                 pass
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Using: python HmW_6.py <Myhomework6>")
+    if len(sys.argv) != 2:  
+        print("Using: python HmW_6.py <folder_path>")
         sys.exit(1)
 
     folder_path = sys.argv[1]
@@ -140,12 +140,12 @@ if __name__ == "__main__":
         print("Error: Folder not found.")
         sys.exit(1)
 
-    # Получение абсолютного пути к папке Myhomework6
-    absolute_path = os.path.abspath(os.getcwd())
+    # Отримання абсолютного шляху до вказаної користувачем папки
+    absolute_path = os.path.abspath(folder_path)
 
-    print("The full path to the folder Myhomework6:", absolute_path)
+    print("The full path to the specified folder:", absolute_path)
 
-    # Передача полных путей к папкам при вызове process_folder
+    # Передача абсолютного шляху при виклику process_folder
     process_folder(absolute_path)
 
     print("Sorting is complete.")
